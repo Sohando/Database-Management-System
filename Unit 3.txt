@@ -20,4 +20,5 @@ WHERE job_title LIKE '%manager%'
 
 #4 : calculate setvice years of all employees
 
--->
+--> SELECT DATE_FORMAT(CURRENT_DATE, "%Y")  - DATE_FORMAT( hire-date, "%Y" )
+FROM employees
