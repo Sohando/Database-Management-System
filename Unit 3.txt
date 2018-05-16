@@ -6,3 +6,18 @@
             DATEDIFF( CURDATE( ) , hire_date ) AS days
     FROM employees
 	
+
+#2 : Show hire dates of  all emplyees as d/m/y
+
+--> SELECT DATE_FORMAT(hire_date,'%d/%m/%y')
+FROM employees
+
+#3 : print all job titles that contains the text 'manager'
+
+--> SELECT job_title
+FROM jobs
+WHERE job_title LIKE '%manager%'
+
+#4 : calculate setvice years of all employees
+
+-->
