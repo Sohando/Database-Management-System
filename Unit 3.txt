@@ -1,0 +1,8 @@
+#1 : Show service yeasr as yours,months,days [not only x years, like x years, y months, z days]
+
+--> SELECT  `first_name` ,
+            DATE_FORMAT( CURDATE( ) ,  '%Y' ) - DATE_FORMAT( hire_date,  '%Y' ) - ( DATE_FORMAT( CURDATE( ) ,  '00-%m-%d' ) < DATE_FORMAT( hire_date,  '00-%m-%d' ) ) AS years, 
+            PERIOD_DIFF( DATE_FORMAT( CURDATE( ) ,  '%Y%m' ) , DATE_FORMAT( hire_date, '%Y%m' ) ) AS months, 
+            DATEDIFF( CURDATE( ) , hire_date ) AS days
+    FROM employees
+	
