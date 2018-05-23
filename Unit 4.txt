@@ -1,0 +1,12 @@
+SELECT department_id, first_name, last_name, AVG(salary)
+
+FROM employees GROUP BY department_id
+
+
+
+SELECT manager_id, COUNT(employee_id) as "Total Employees"
+FROM employees GROUP BY manager_id
+
+SELECT department_id, MAX(salary) AS "Max Salary" , MIN(salary) AS "Min Salary"
+FROM employees 
+GROUP BY department_id
