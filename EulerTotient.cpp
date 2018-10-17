@@ -28,6 +28,22 @@ void sieve2() {
             }
       }
 }
+int solve(int n) {
+      int mul = 1, ans = 1;
+      for(int i = 0; n > 1 ; i++) {
+            if(n % primes[i] == 0) {
+                  mul = 1;
+                  while(n % primes[i] == 0) {
+                        mul *= primes[i];
+                        n /= primes[i];
+                  }
+                  mul /= primes[i];
+                  mul *= (primes[i] - 1);
+                  ans *= mul;
+            }
+      }
+      return ans;
+}
 int main() {
       ios_base::sync_with_stdio(0), cin.tie(0);
       sieve2();
@@ -40,20 +56,7 @@ int main() {
                   cout << n-1 << endl;
             }
             else{
-                  int mul = 1, ans = 1;
-                  for(int i = 0; n > 1 ; i++) {
-                        if(n % primes[i] == 0) {
-                              mul = 1;
-                              while(n % primes[i] == 0) {
-                                    mul *= primes[i];
-                                    n /= primes[i];
-                              }
-                              mul /= primes[i];
-                              mul *= (primes[i] - 1);
-                              ans *= mul;
-                        }
-                  }
-                  cout << ans << endl;
+                  cout << solve(n) << endl;
             }
       }
       return 0;
